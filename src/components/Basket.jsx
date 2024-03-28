@@ -1,5 +1,11 @@
+import { useNavigate } from "react-router-dom";
+import useCartCtx from "../contexts";
+import { Button } from "@nextui-org/react";
+
 /* eslint-disable react/prop-types */
 const Basket = ({ items, handleRemove, handleAdd, handleReduce }) => {
+	const { handleUpdateItems } = useCartCtx();
+	const navigate = useNavigate();
 	let totalP = 0;
 
 	let disp = items.map((x) => {
@@ -38,15 +44,31 @@ const Basket = ({ items, handleRemove, handleAdd, handleReduce }) => {
 		);
 	});
 
+	const proceedToCheckout = () => {
+		handleUpdateItems(items);
+		navigate("/checkout");
+	};
+
 	return (
-		<div>
-			{disp}
-			<br />
-			<span className="f3 fw5">
-				{" "}
-				TOTAL:<span className="green fw6">KSh{totalP}</span>
-			</span>
-		</div>
+		<>
+			<div>
+				{disp}
+				<br />
+				<span className="f3 fw5">
+					{" "}
+					TOTAL:<span className="green fw6">KSh{totalP}</span>
+				</span>
+			</div>
+			<Button
+				onClick={proceedToCheckout}
+				className="px-8"
+				radius="full"
+				color="secondary"
+				variant="flat"
+			>
+				Proceed To Checkout
+			</Button>
+		</>
 	);
 };
 

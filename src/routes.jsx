@@ -4,6 +4,7 @@ import ContactPage from "./pages/contact";
 import AboutPage from "./pages/about";
 import HomePage from "./pages/home";
 import Layout from "./layout";
+import BasketPage from "./pages/basket";
 
 const Routes = () => {
 	const routes = useRoutes([
@@ -26,6 +27,10 @@ const Routes = () => {
 				{
 					path: "/contact",
 					element: <ContactPage />,
+				},
+				{
+					path: "/basket",
+					element: <BasketPage />,
 				},
 			],
 		},

@@ -52,21 +52,23 @@ function Services() {
 	});
 
 	return (
-		<div>
-			<div className="tc fl w-70">
-				<h2>SERVICES</h2>
-				{prods}
-			</div>
-			<div className="tc fl w-30 bg-black white mt3 br3">
-				<h2>Basket</h2>
-				<Basket
-					items={basket}
-					handleRemove={remove}
-					handleAdd={add}
-					handleReduce={reduce}
-				/>
-			</div>
-		</div>
+		<main className=" container ">
+			<section className="grid grid-cols-2 gap-6">
+				<section className="">
+					<h2 className="font-semibold text-primary">SERVICES</h2>
+					{prods}
+				</section>
+				<section className="">
+					<h2>Basket</h2>
+					<Basket
+						items={basket}
+						handleRemove={remove}
+						handleAdd={add}
+						handleReduce={reduce}
+					/>
+				</section>
+			</section>
+		</main>
 	);
 }
 
