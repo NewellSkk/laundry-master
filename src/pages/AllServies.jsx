@@ -1,8 +1,8 @@
 import React from 'react'
 import { Stack, styled, Typography } from '@mui/material'
 import AboutImage from '../assets/hero2.png';
-import AboutSection from '../components/AboutSection';
 import Work from '../components/Work';
+import Services from '../components/Services';
 
 const ImageContainer =  styled('img')(({theme}) => ({
     height: '100%',
@@ -56,8 +56,7 @@ const ImageContainer =  styled('img')(({theme}) => ({
     }
   }));
 
-
-function AboutPage() {
+function AllServies() {
   return (
     <div>
         <PrincipleImageContainer>
@@ -65,16 +64,16 @@ function AboutPage() {
             <ImageOverlayTwo>
                 <Stack direction={{xs: 'column', lg: 'row'}}>
                     <Stack width='100%' alignItems='center'>
-                        <Heading variant="h4" color='inherit' marginLeft={{xs: 0, lg: 0}}>About Us</Heading>
+                        <Heading variant="h4" color='inherit' marginLeft={{xs: 0, lg: 0}}>Services</Heading>
                     </Stack>
                 </Stack>
             </ImageOverlayTwo>
 
         </PrincipleImageContainer>
-        <AboutSection />
         <Work />
+        <Services />
     </div>
   )
 }
 
-export default AboutPage
+export default AllServies
