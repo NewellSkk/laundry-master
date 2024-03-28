@@ -66,7 +66,7 @@ const ContactPage = () => {
           </Stack>
         </ImageOverlayTwo>
       </PrincipleImageContainer>
-      <Container maxWidth="sm">
+      <Container maxWidth="lg">
         <form style={{ marginTop: '20px' }}>
           <Stack spacing={2}>
             <TextField label="Name" variant="standard" fullWidth />
@@ -79,7 +79,7 @@ const ContactPage = () => {
               rows={4}
               fullWidth
             />
-            <Button variant="contained" sx={{background: '#6785FF'}} color="primary" fullWidth>
+            <Button variant="contained" sx={{background: '#6785FF'}} color="primary" size='large' fullWidth>
               Send
             </Button>
           </Stack>
