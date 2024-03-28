@@ -1,16 +1,18 @@
 import { NextUIProvider } from "@nextui-org/react";
-import { CartCtxProvider } from "./contexts";
+
 import Routes from "./routes";
 import { useNavigate } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./theme";
 
 const App = () => {
 	const navigate = useNavigate();
 	return (
-		<CartCtxProvider>
-			<NextUIProvider navigate={navigate}>
+		<NextUIProvider navigate={navigate}>
+			<ThemeProvider theme={theme}>
 				<Routes />
-			</NextUIProvider>
-		</CartCtxProvider>
+			</ThemeProvider>
+		</NextUIProvider>
 	);
 };
 

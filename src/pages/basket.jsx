@@ -15,9 +15,11 @@ import { products } from "../components/products";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import PhoneField from "../components/form/phoneField";
+import { useNavigate } from "react-router";
 
 const BasketPage = () => {
 	const methods = useForm();
+	const navigate = useNavigate();
 
 	const [basket, setBasket] = useState([]);
 	const [proceedToCheckout, setProceedToCheckout] = useState(false);
@@ -74,6 +76,7 @@ const BasketPage = () => {
 
 	const handleCheckout = (data) => {
 		console.log({ ...data, basket, price: totalPrice() });
+		navigate("/thank-you-page");
 	};
 
 	return (

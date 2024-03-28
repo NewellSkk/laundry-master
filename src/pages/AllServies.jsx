@@ -1,8 +1,8 @@
-import { Button, Stack, styled, Typography } from "@mui/material";
-import HeroImage from "../assets/wash1.jpg";
+import React from "react";
+import { Stack, styled, Typography } from "@mui/material";
+import AboutImage from "../assets/hero2.png";
 import Work from "../components/Work";
 import Services from "../components/Services";
-import { useNavigate } from "react-router-dom";
 
 const ImageContainer = styled("img")(({ theme }) => ({
 	height: "100%",
@@ -13,7 +13,7 @@ const ImageContainer = styled("img")(({ theme }) => ({
 
 const PrincipleImageContainer = styled("div")(({ theme }) => ({
 	width: "100%",
-	height: "90vh",
+	height: "50vh",
 	display: "flex",
 	justifyContent: "center",
 	overflow: "hidden",
@@ -54,32 +54,11 @@ const Heading = styled(Typography)(({ theme }) => ({
 	},
 }));
 
-const ButtonContainer = styled(Button)(({ theme }) => ({
-	height: "3rem",
-	width: "30%",
-	objectFit: "cover",
-	marginTop: "1rem",
-	borderRadius: "2rem",
-	background: "#6785FF",
-	color: "white",
-	textTransform: "capitalize",
-	[theme.breakpoints.down("md")]: {
-		width: "100%",
-		margin: "2rem 0",
-	},
-}));
-
-function HomePage() {
-	const navigation = useNavigate();
-
-	const servicesHandler = () => {
-		navigation("basket");
-	};
-
+function AllServies() {
 	return (
-		<>
+		<div>
 			<PrincipleImageContainer>
-				<ImageContainer src={HeroImage} alt=""></ImageContainer>
+				<ImageContainer src={AboutImage} alt=""></ImageContainer>
 				<ImageOverlayTwo>
 					<Stack direction={{ xs: "column", lg: "row" }}>
 						<Stack width="100%" alignItems="center">
@@ -88,27 +67,16 @@ function HomePage() {
 								color="inherit"
 								marginLeft={{ xs: 0, lg: 0 }}
 							>
-								Quality laundry service in your city
+								Services
 							</Heading>
-							<Typography
-								variant="h6"
-								color="inherit"
-								marginLeft={{ xs: 0, lg: 0 }}
-								marginTop={2}
-							>
-								We take care about cleenness of your cloth
-							</Typography>
-							<ButtonContainer onClick={servicesHandler}>
-								Create Your Basket
-							</ButtonContainer>
 						</Stack>
 					</Stack>
 				</ImageOverlayTwo>
 			</PrincipleImageContainer>
 			<Work />
 			<Services />
-		</>
+		</div>
 	);
 }
 
-export default HomePage;
+export default AllServies;
